@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 - [日本語](README.ja.md)
 
 # VRM addon for Godot Engine
@@ -108,3 +109,7 @@ Special thanks to the authors of UniVRM, MToon and other VRM tooling
 - https://github.com/ousttrue
 - https://github.com/saturday06
 - https://github.com/FMS-Cat
+=======
+# project-A
+3D Puzzle RPG made in Godot
+>>>>>>> 8cb89549eeaa20d551133717a468c12ad460c1cc
