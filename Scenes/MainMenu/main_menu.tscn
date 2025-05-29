@@ -1,0 +1,58 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsmcqjnwmu6ks"]
+
+[ext_resource type="Script" uid="uid://c28kj3wymheky" path="res://Scenes/MainMenu/Scripts/main_menu.gd" id="1_cbdym"]
+[ext_resource type="PackedScene" uid="uid://dpl1axxboqqpp" path="res://Scenes/OptionsMenu/options_menu.tscn" id="2_dk34e"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cbdym")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -531.0
+offset_top = 52.0
+offset_right = -356.0
+offset_bottom = 286.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="NewGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "New Game"
+
+[node name="LoadGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Load Game"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Options"
+
+[node name="ExitGameButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Exit Game"
+
+[node name="OptionsMenu" parent="." instance=ExtResource("2_dk34e")]
+visible = false
+layout_mode = 1
+
+[connection signal="pressed" from="VBoxContainer/NewGameButton" to="." method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/LoadGameButton" to="." method="_on_load_game_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ExitGameButton" to="." method="_on_exit_game_button_pressed"]
+[connection signal="return_to_main_menu" from="OptionsMenu" to="." method="_on_options_menu_return_to_main_menu"]

@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://c1ixfeutdp0uk"]
+
+[ext_resource type="Script" uid="uid://dn1x3vhali6uw" path="res://Scenes/Combat/Scripts/combat.gd" id="1_tglad"]
+[ext_resource type="PackedScene" uid="uid://dfydlb58yv71w" path="res://Scenes/CombatMenu/combat_menu.tscn" id="3_21we1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bp48j"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2tg5n"]
+size = Vector3(20, 1, 20)
+
+[node name="Combat" type="Node3D"]
+script = ExtResource("1_tglad")
+between_heroes = 4.0
+between_enemies = 4.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+shape = SubResource("BoxShape3D_bp48j")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_2tg5n")
+
+[node name="Heroes" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+
+[node name="Enemies" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 5)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="CombatMenu" parent="CanvasLayer" instance=ExtResource("3_21we1")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.965926, 0.0885213, -0.24321, 0, 0.939693, 0.34202, 0.258819, 0.330366, -0.907673, -3, 3, -9)

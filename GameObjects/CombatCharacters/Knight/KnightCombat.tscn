@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2o5gqoyub3vi"]
+
+[ext_resource type="PackedScene" uid="uid://bnoj42obg1lvj" path="res://GameObjects/Player3D/Model/knight_model.tscn" id="1_w8sih"]
+[ext_resource type="PackedScene" uid="uid://dfjl8fdjkbdsu" path="res://GameObjects/CombatCharacters/combat_character.tscn" id="2_8xxfx"]
+
+[node name="KnightCombat" type="Node3D"]
+
+[node name="Knight_Model" parent="." instance=ExtResource("1_w8sih")]
+
+[node name="CombatCharacter" parent="." instance=ExtResource("2_8xxfx")]
