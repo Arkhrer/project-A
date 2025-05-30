@@ -8,4 +8,5 @@ func update_slots():
 		slots[i].update(inventory.items[i])
 
 func _ready() -> void:
+	inventory.update.connect(update_slots)
 	update_slots()

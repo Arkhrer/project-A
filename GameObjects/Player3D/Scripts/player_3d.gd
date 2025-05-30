@@ -17,7 +17,6 @@ extends CharacterBody3D
 @onready var spring_arm_3d: SpringArm3D = %SpringArm3D
 @onready var knight: Node3D = %KnightModel
 @onready var animation_player: AnimationPlayer = %KnightModel/%AnimationPlayer
-@onready var area_3d: Area3D = %Area3D
 @onready var attack_timer: Timer = %AttackTimer
 @onready var pause_menu: Control = %PauseMenu
 
@@ -64,7 +63,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func _process(_delta: float) -> void:
 	pass
-	
+
 func _physics_process(delta: float) -> void:
 	camera_pivot.rotation.x += _camera_input_direction.y * delta
 	camera_pivot.rotation.x = clamp(camera_pivot.rotation.x, -PI/6.0, PI/3.0)
@@ -122,12 +121,6 @@ func _physics_process(delta: float) -> void:
 					animation_player.play("Walking_A", -1, 2.0)
 			else:
 				animation_player.play("Idle")
-
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	print("Achei um " + body.name)
-	
-
 
 func _on_attack_timer_timeout() -> void:
 	_can_attack = true

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://chm45h1yum6ex"]
+[gd_scene load_steps=3 format=3 uid="uid://chm45h1yum6ex"]
 
 [ext_resource type="Script" uid="uid://c7ei2mf8lhp1t" path="res://Systems/Inventory/PlayerInventory/Scripts/inventory_slot.gd" id="1_5nhoq"]
+[ext_resource type="Texture2D" uid="uid://btkeedirbhpa5" path="res://Resources/Icon/icon.svg" id="2_fd34p"]
 
 [node name="InventorySlot" type="Panel"]
 offset_right = 103.0
@@ -9,4 +10,10 @@ script = ExtResource("1_5nhoq")
 
 [node name="ItemDisplay" type="Sprite2D" parent="."]
 scale = Vector2(0.804688, 0.804688)
+centered = false
+
+[node name="ItemDisplayDebug" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.804688, 0.804688)
+texture = ExtResource("2_fd34p")
 centered = false
