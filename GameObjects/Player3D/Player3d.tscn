@@ -22,7 +22,8 @@ radius = 3.0
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vu4di"]
 
-[node name="Player3D" type="CharacterBody3D"]
+[node name="Player3D" type="CharacterBody3D" groups=["Player"]]
+collision_layer = 2
 script = ExtResource("1_ibf3h")
 
 [node name="PlayerCollisionShape3D" type="CollisionShape3D" parent="."]
@@ -72,6 +73,13 @@ one_shot = true
 [node name="PauseMenu" parent="." instance=ExtResource("3_3v454")]
 unique_name_in_owner = true
 visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
 [connection signal="body_entered" from="KnightModel/Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

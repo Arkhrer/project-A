@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvq1gusnl7qt6"]
+[gd_scene load_steps=6 format=3 uid="uid://bvq1gusnl7qt6"]
 
 [ext_resource type="PackedScene" uid="uid://8qsc0jp0kdt" path="res://GameObjects/Player3D/Player3d.tscn" id="1_cw4bo"]
+[ext_resource type="PackedScene" uid="uid://brdocrceqakfi" path="res://GameObjects/DebugInteractable/ball.tscn" id="1_yeg3u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cw4bo"]
 albedo_color = Color(0.345632, 0.167378, 0.0118365, 1)
@@ -11,13 +12,6 @@ size = Vector3(100, 1, 100)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l5fjc"]
 size = Vector3(100, 1, 100)
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_1s8e0"]
-radius = 1.0
-
-[sub_resource type="SphereMesh" id="SphereMesh_2w1gi"]
-radius = 1.0
-height = 2.0
 
 [node name="Room1" type="Node3D"]
 
@@ -34,17 +28,7 @@ mesh = SubResource("BoxMesh_32fi6")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_l5fjc")
 
-[node name="Ball" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17, 0, 5)
-collision_layer = 3
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("SphereShape3D_1s8e0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("SphereMesh_2w1gi")
+[node name="Ball" parent="." instance=ExtResource("1_yeg3u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 2)
 
 [node name="Player3D" parent="." instance=ExtResource("1_cw4bo")]

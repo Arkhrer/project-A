@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://brdocrceqakfi"]
+
+[ext_resource type="PackedScene" uid="uid://b1nhjw1t737p6" path="res://Systems/Interaction/interaction_area.tscn" id="1_byso0"]
+[ext_resource type="Script" uid="uid://x0swofd5sy8f" path="res://GameObjects/DebugInteractable/Scripts/ball.gd" id="1_m5qpp"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_01ih3"]
+margin = 0.0
+radius = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_byso0"]
+radius = 1.0
+height = 2.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_m5qpp"]
+radius = 2.5
+
+[node name="Ball" type="RigidBody3D"]
+script = ExtResource("1_m5qpp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_01ih3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("SphereMesh_byso0")
+
+[node name="InteractionArea" parent="." instance=ExtResource("1_byso0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("SphereShape3D_m5qpp")
