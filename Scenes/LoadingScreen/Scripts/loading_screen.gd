@@ -10,7 +10,7 @@ func _ready() -> void:
 	scene_name = "res://Scenes/Room1/room_1.tscn"
 	ResourceLoader.load_threaded_request(scene_name)
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	scene_load_status = ResourceLoader.load_threaded_get_status(scene_name, progress)
 	loading_progress.text = str(floor(progress[0]*100)) + "%"
 	if scene_load_status == ResourceLoader.THREAD_LOAD_LOADED:
