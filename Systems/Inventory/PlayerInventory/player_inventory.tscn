@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://b775vs174nclg"]
+
+[ext_resource type="PackedScene" uid="uid://chm45h1yum6ex" path="res://Systems/Inventory/PlayerInventory/inventory_slot.tscn" id="1_3ek2q"]
+[ext_resource type="Script" uid="uid://cluonl0whk8cd" path="res://Systems/Inventory/PlayerInventory/Scripts/player_inventory.gd" id="1_eji4c"]
+
+[node name="PlayerInventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eji4c")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="Panel/MarginContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/h_separation = 110
+theme_override_constants/v_separation = 110
+columns = 4
+
+[node name="InventorySlot" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot7" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
+layout_mode = 2

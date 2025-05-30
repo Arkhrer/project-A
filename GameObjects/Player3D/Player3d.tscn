@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://8qsc0jp0kdt"]
+[gd_scene load_steps=11 format=3 uid="uid://8qsc0jp0kdt"]
 
 [ext_resource type="PackedScene" uid="uid://bnoj42obg1lvj" path="res://GameObjects/Player3D/Model/knight_model.tscn" id="1_bbsnw"]
 [ext_resource type="Script" uid="uid://b5t4koem0pe7p" path="res://GameObjects/Player3D/Scripts/player_3d.gd" id="1_ibf3h"]
+[ext_resource type="Resource" uid="uid://cmq4uxq7kc56g" path="res://Systems/Inventory/PlayerInventory/player_inventory.tres" id="2_67cw5"]
 [ext_resource type="PackedScene" uid="uid://c6wc414nd8vqa" path="res://Scenes/PauseMenu/pause_menu.tscn" id="3_3v454"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0hhdb"]
@@ -25,6 +26,7 @@ radius = 3.0
 [node name="Player3D" type="CharacterBody3D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_ibf3h")
+inventory = ExtResource("2_67cw5")
 
 [node name="PlayerCollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
