@@ -22,7 +22,7 @@ func _sort_by_distance_to_player(area1: InteractionArea, area2: InteractionArea)
 	var area2_to_player = player.global_position.distance_to(area2.global_position)
 	return area1_to_player < area2_to_player
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = "[" + button_name + "] to " + active_areas[0].action_name
