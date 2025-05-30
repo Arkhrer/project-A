@@ -73,7 +73,7 @@ func _physics_process(delta: float) -> void:
 	_camera_input_direction = Vector2.ZERO
 	
 	var raw_input := Input.get_vector("move_left", "move_right", "move_forward", "move_backward") if (Dialogic.current_timeline == null) else Vector2.ZERO
-	#var jump_start := Input.is_action_just_pressed("jump") and is_on_floor() if (Dialogic.current_timeline == null) else false
+	var jump_start := Input.is_action_just_pressed("jump") and is_on_floor() if (Dialogic.current_timeline == null) else false
 	
 	var forward := camera_3d.global_basis.z
 	var right := camera_3d.global_basis.x
@@ -92,8 +92,8 @@ func _physics_process(delta: float) -> void:
 	#velocity.y = velocity_y - _gravity * delta
 	velocity.y = velocity_y + get_gravity().y * delta
 	
-	#if jump_start:
-		#velocity.y += jump_impulse
+	if jump_start:
+		velocity.y += jump_impulse
 	
 	move_and_slide()
 	
@@ -108,10 +108,10 @@ func _physics_process(delta: float) -> void:
 	if _attacking:
 		animation_player.play("1H_Melee_Attack_Slice_Horizontal")
 	else:
-		#if jump_start:
-			#animation_player.play("Jump_Start", -1, 1.5)
-		#elif not is_on_floor() and velocity.y < 0:
-			#animation_player.play("Jump_Idle")
+		if jump_start:
+			animation_player.play("Jump_Start", -1, 1.5)
+		elif not is_on_floor() and velocity.y < 0:
+			animation_player.play("Jump_Idle")
 			
 		if is_on_floor():
 			var ground_speed := velocity.length()
