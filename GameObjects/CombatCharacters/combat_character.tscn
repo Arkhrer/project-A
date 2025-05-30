@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfjl8fdjkbdsu"]
-
-[ext_resource type="Script" uid="uid://b031hft0xb1e7" path="res://GameObjects/CombatCharacters/combat_character.gd" id="1_snnvi"]
-
-[node name="CombatCharacter" type="Node3D"]
-script = ExtResource("1_snnvi")
