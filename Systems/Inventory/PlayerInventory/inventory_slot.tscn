@@ -1,19 +1,29 @@
-[gd_scene load_steps=3 format=3 uid="uid://chm45h1yum6ex"]
+[gd_scene load_steps=3 format=3 uid="uid://c505fry6h4yie"]
 
 [ext_resource type="Script" uid="uid://c7ei2mf8lhp1t" path="res://Systems/Inventory/PlayerInventory/Scripts/inventory_slot.gd" id="1_5nhoq"]
 [ext_resource type="Texture2D" uid="uid://btkeedirbhpa5" path="res://Resources/Icon/icon.svg" id="2_fd34p"]
 
-[node name="InventorySlot" type="Panel"]
-offset_right = 103.0
-offset_bottom = 103.0
+[node name="InventorySlot" type="Control"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 3
+anchor_right = 0.089
+anchor_bottom = 0.159
+offset_right = -100.0
+offset_bottom = -100.0
 script = ExtResource("1_5nhoq")
 
-[node name="ItemDisplay" type="Sprite2D" parent="."]
-scale = Vector2(0.804688, 0.804688)
-centered = false
-
-[node name="ItemDisplayDebug" type="Sprite2D" parent="."]
+[node name="ItemDisplayDebug" type="TextureRect" parent="."]
 visible = false
-scale = Vector2(0.804688, 0.804688)
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("2_fd34p")
-centered = false
+expand_mode = 1
+
+[node name="ItemDisplay" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+expand_mode = 1

@@ -1,6 +1,6 @@
-extends Panel
+extends Control
 
-@onready var item_display: Sprite2D = $ItemDisplay
+@onready var item_display: TextureRect = $ItemDisplay
 
 func update(item: InventoryItem) -> void:
 	if !item:
