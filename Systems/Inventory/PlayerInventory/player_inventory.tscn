@@ -42,33 +42,25 @@ theme_override_constants/v_separation = 75
 columns = 4
 
 [node name="InventorySlot" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot2" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot3" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot4" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot5" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot6" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot7" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2
 
 [node name="InventorySlot8" parent="Panel/MarginContainer/GridContainer" instance=ExtResource("1_3ek2q")]
-custom_minimum_size = Vector2(0, 0)
 layout_mode = 2

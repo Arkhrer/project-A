@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var player: CharacterBody3D = get_tree().get_first_node_in_group("Player")
-@onready var label = $Label
+@onready var label = $Label3D
 
 var action_event = InputMap.action_get_events("interact")
 var button_name = OS.get_keycode_string(action_event[0].physical_keycode)
@@ -26,6 +26,8 @@ func _process(_delta: float) -> void:
 	if active_areas.size() > 0 and can_interact:
 		active_areas.sort_custom(_sort_by_distance_to_player)
 		label.text = "[" + button_name + "] to " + active_areas[0].action_name
+		label.global_position = active_areas[0].global_position
+		label.position.y += 2.5
 		label.show()
 	else:
 		label.hide()

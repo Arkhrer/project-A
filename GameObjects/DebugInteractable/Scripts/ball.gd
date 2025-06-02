@@ -10,6 +10,7 @@ func _ready():
 func _on_interact():
 	Dialogic.start("test_timeline")
 	get_viewport().set_input_as_handled()
+	#await Dialogic.timeline_ended
 	player.inventory.insert(DEBUG_ITEM)
 	queue_free()
 	
